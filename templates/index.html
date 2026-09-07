@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Quiz</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Geo Quiz</h1>
+        </div>
+
+        <div class="main">
+            <h3>{{question}}</h3>
+
+            <form action="/" method="post">
+                <input type="text" placeholder="Enter your answer ..." name="answer" required>
+                <input type="hidden" name="correct_answer" value="{{correct_answer}}">
+                <button type="submit">Submit</button>
+            </form>
+
+            {% if feedback %}
+                
+                {% if feedback == "Correct!" %}
+                    <h3 style="color: green;">{{feedback}}</h3>
+                {% else %}
+                    <h3 style="color: red;">{{feedback}}</h3>
+                {% endif %}
+
+            {% endif %}
+
+        </div>
+
+        <div class="footer">
+            <p>Developed by Domen R.</p>
+        </div>
+
+    </div>
+    
+</body>
+</html>
